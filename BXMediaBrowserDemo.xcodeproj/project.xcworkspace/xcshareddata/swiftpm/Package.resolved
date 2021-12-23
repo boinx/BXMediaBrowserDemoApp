@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BXMediaBrowser",
+        "repositoryURL": "git@github.com:boinx/BXMediaBrowser.git",
+        "state": {
+          "branch": "main",
+          "revision": "7ae04efd7f80f2b52fade932e7b5595638bbe722",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
