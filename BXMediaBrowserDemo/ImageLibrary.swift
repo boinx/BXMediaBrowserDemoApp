@@ -42,23 +42,13 @@ class ImageLibrary : GenericLibrary
 	override init(identifier:String)
 	{
 		super.init(identifier:identifier)
-		
-//		let section1 = Section(identifier:"Libraries", name:"Libraries")
-//		self.addSection(section1)
-//
-//		let section2 = Section(identifier:"Internet", name:"Internet")
-//		self.addSection(section2)
-//
-//		let section3 = Section(identifier:"Folders", name:"Folders")
-//		self.addSection(section3)
-		
+
 		let photosSource = PhotosSource()
 		librariesSection?.addSource(photosSource)
 		
 		let folderSource = ImageFolderSource()
 		self.folderSource = folderSource
 		foldersSection?.addSource(folderSource)
-//		section3.addSourceHandler = { [weak self] _ in self?.addFolder(to:folderSource) }
 		
 //		self.restoreState()
 		self.load()
