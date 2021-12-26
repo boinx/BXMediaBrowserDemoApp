@@ -23,64 +23,56 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 
-import SwiftUI
+import AppKit
 import BXMediaBrowser
 
 
 //----------------------------------------------------------------------------------------------------------------------
 
 
-@main struct MediaBrowserTestApp : App
+class ImageLibrary : GenericLibrary
 {
-	init()
+	/// Shared singleton instance
+	
+	static let shared = ImageLibrary(identifier:"Images")
+	
+	
+	/// Creates the basic structure of the SampleLibrary
+	
+	override init(identifier:String)
 	{
-		ImageLibrary.shared.load()
+		super.init(identifier:identifier)
+		
+//		let section1 = Section(identifier:"Libraries", name:"Libraries")
+//		self.addSection(section1)
+//
+//		let section2 = Section(identifier:"Internet", name:"Internet")
+//		self.addSection(section2)
+//
+//		let section3 = Section(identifier:"Folders", name:"Folders")
+//		self.addSection(section3)
+		
+		let photosSource = PhotosSource()
+		librariesSection?.addSource(photosSource)
+		
+		let folderSource = ImageFolderSource()
+		self.folderSource = folderSource
+		foldersSection?.addSource(folderSource)
+//		section3.addSourceHandler = { [weak self] _ in self?.addFolder(to:folderSource) }
+		
+//		self.restoreState()
+		self.load()
 	}
 	
-    var body: some Scene
+
+ 	/// Creates a ImageFolderContainer for the specified folder URL
+	
+   override func createContainer(for url:URL) -> FolderContainer
     {
-		// Window & View hierarchy
-		
-        WindowGroup
-        {
-			BrowserView()
-				.environmentObject(ImageLibrary.shared)
-				.environmentObject(VideoLibrary.shared)
-				.environmentObject(AudioLibrary.shared)
-        }
-       
-        // Menu items
-        
-        .commands
-        {
-			CommandGroup(after:.newItem)
-			{
-				Button("Add Image Folder…")
-				{
-					let library = ImageLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
-
-				Button("Add Video Folder…")
-				{
-					let library = VideoLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
-
-				Button("Add Audio Folder…")
-				{
-					let library = AudioLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
-			}
-		}
+		ImageFolderContainer(url:url)
     }
+
 }
 
 
 //----------------------------------------------------------------------------------------------------------------------
-
-

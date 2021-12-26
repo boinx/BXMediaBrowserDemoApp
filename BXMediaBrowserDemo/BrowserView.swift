@@ -30,51 +30,77 @@ import BXMediaBrowser
 //----------------------------------------------------------------------------------------------------------------------
 
 
-@main struct MediaBrowserTestApp : App
+struct BrowserView : View
 {
-	init()
+	@EnvironmentObject var imageLibrary:ImageLibrary
+	@EnvironmentObject var videoLibrary:VideoLibrary
+	@EnvironmentObject var audioLibrary:AudioLibrary
+	
+	@State private var mediaType = 0
+	
+	private var selectedLibrary:Library
 	{
-		ImageLibrary.shared.load()
+		switch mediaType
+		{
+			case 1 : return videoLibrary
+			case 2 : return audioLibrary
+			default: return imageLibrary
+		}
 	}
 	
-    var body: some Scene
+    var body: some View
     {
-		// Window & View hierarchy
-		
-        WindowGroup
-        {
-			BrowserView()
-				.environmentObject(ImageLibrary.shared)
-				.environmentObject(VideoLibrary.shared)
-				.environmentObject(AudioLibrary.shared)
-        }
-       
-        // Menu items
-        
-        .commands
-        {
-			CommandGroup(after:.newItem)
+		HSplitView
+		{
+			// Sidebar
+			
+			VStack
 			{
-				Button("Add Image Folder…")
+				// MediaType
+				
+				Picker("", selection:$mediaType)
 				{
-					let library = ImageLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
+					Text("Images").tag(0)
+					Text("Videos").tag(1)
+					Text("Audio").tag(2)
 				}
-
-				Button("Add Video Folder…")
+				.pickerStyle(.segmented)
+				.padding(.bottom,10)
+				
+				// Library
+				
+				ScrollView
 				{
-					let library = VideoLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
+					if mediaType == 0
+					{
+						LibraryView(with:imageLibrary)
+					}
+					else if mediaType == 1
+					{
+						LibraryView(with:videoLibrary)
+					}
+					else if mediaType == 2
+					{
+						LibraryView(with:audioLibrary)
+					}
 				}
-
-				Button("Add Audio Folder…")
-				{
-					let library = AudioLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
+			}
+			.padding()
+			.background(.thinMaterial)
+			.frame(minWidth:240)
+			
+			// Selected Container with Objects
+			
+			if let container = self.selectedLibrary.selectedContainer
+			{
+				ObjectsView(with:container)
+					.environmentObject(self.selectedLibrary)
+					.layoutPriority(1)
+			}
+			else
+			{
+				EmptyObjectsView()
+					.layoutPriority(1)
 			}
 		}
     }

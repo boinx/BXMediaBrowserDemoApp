@@ -23,64 +23,44 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 
-import SwiftUI
+import AppKit
 import BXMediaBrowser
 
 
 //----------------------------------------------------------------------------------------------------------------------
 
 
-@main struct MediaBrowserTestApp : App
+class VideoLibrary : GenericLibrary
 {
-	init()
+	/// Shared singleton instance
+	
+	static let shared = VideoLibrary(identifier:"Videos")
+	
+	
+	/// Creates the basic structure of the SampleLibrary
+	
+	override init(identifier:String)
 	{
-		ImageLibrary.shared.load()
+		super.init(identifier:identifier)
+		
+		let photosSource = PhotosSource()
+		librariesSection?.addSource(photosSource)
+		
+		let folderSource = VideoFolderSource()
+		self.folderSource = folderSource
+		foldersSection?.addSource(folderSource)
+
+		self.load()
 	}
 	
-    var body: some Scene
+	
+	/// Creates a VideoFolderContainer for the specified folder URL
+	
+    override func createContainer(for url:URL) -> FolderContainer
     {
-		// Window & View hierarchy
-		
-        WindowGroup
-        {
-			BrowserView()
-				.environmentObject(ImageLibrary.shared)
-				.environmentObject(VideoLibrary.shared)
-				.environmentObject(AudioLibrary.shared)
-        }
-       
-        // Menu items
-        
-        .commands
-        {
-			CommandGroup(after:.newItem)
-			{
-				Button("Add Image Folder…")
-				{
-					let library = ImageLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
-
-				Button("Add Video Folder…")
-				{
-					let library = VideoLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
-
-				Button("Add Audio Folder…")
-				{
-					let library = AudioLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
-			}
-		}
+		VideoFolderContainer(url:url)
     }
 }
 
 
 //----------------------------------------------------------------------------------------------------------------------
-
-
