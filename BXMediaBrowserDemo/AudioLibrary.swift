@@ -56,6 +56,9 @@ class AudioLibrary : GenericLibrary
     override func createContainer(for url:URL) -> FolderContainer
     {
 		AudioFolderContainer(url:url)
+		{
+			[weak self] in self?.folderSource?.removeContainer($0)
+		}
     }
 }
 
