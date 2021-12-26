@@ -65,7 +65,7 @@ struct BrowserView : View
 					Text("Audio").tag(2)
 				}
 				.pickerStyle(.segmented)
-				.padding(.bottom,10)
+				.padding(10)
 				
 				// Library
 				
@@ -85,7 +85,6 @@ struct BrowserView : View
 					}
 				}
 			}
-			.padding()
 			.background(.thinMaterial)
 			.frame(minWidth:240)
 			
