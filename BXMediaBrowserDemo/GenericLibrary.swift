@@ -77,18 +77,21 @@ class GenericLibrary : Library
 			self.addFolder(to:self.folderSource)
 		}
 		
+		// When the application launches, restore the last known state of the library
+		
+		self.observers += NotificationCenter.default.publisher(for:NSApplication.didFinishLaunchingNotification, object:nil).sink
+		{
+			[weak self] _ in
+			self?.restoreState()
+		}
+		
 		// When the application quits, save the current state of the library
 		
 		self.observers += NotificationCenter.default.publisher(for:NSApplication.willTerminateNotification, object:nil).sink
 		{
 			[weak self] _ in
-			guard let self = self else { return }
-//			self.saveState()
+			self?.saveState()
 		}
-
-		
-//		self.restoreState()
-		self.load()
 	}
 	
 
@@ -115,6 +118,36 @@ class GenericLibrary : Library
     {
 		FolderContainer(url:url)
     }
+
+
+//----------------------------------------------------------------------------------------------------------------------
+
+
+	func saveState()
+	{
+		Task
+		{
+			var info:[String:Any] = [:]
+			await self.saveState(to:&info)
+			UserDefaults.standard.set(info, forKey:statePrefsKey)
+			Swift.print("\(Self.self).\(#function)")
+		}
+	}
+	
+	func restoreState()
+	{
+		Task
+		{
+			guard let info = UserDefaults.standard.dictionary(forKey:statePrefsKey) else { return }
+			await self.restoreState(from:info)
+			Swift.print("\(Self.self).\(#function)")
+		}
+	}
+	
+	private var statePrefsKey:String
+	{
+		"BXMediaBrowser.Library.\(identifier)".replacingOccurrences(of:".", with:"-")
+	}
 }
 
 
