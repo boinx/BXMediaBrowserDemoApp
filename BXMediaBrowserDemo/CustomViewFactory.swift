@@ -23,69 +23,43 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 
-import SwiftUI
 import BXMediaBrowser
+import SwiftUI
 
 
 //----------------------------------------------------------------------------------------------------------------------
 
 
-@main struct MediaBrowserTestApp : App
+public struct CustomViewFactory : ViewFactory
 {
-	// Setup
+	// Create the View and wrap it in a type-erased AnyView
 	
-	init()
+	public func build(with model:Any) -> AnyView
 	{
-
+		let view = Self.customView(for:model)
+		return AnyView(view)
 	}
+
+
+	/// This function creates custom views as needed for the host application
 	
-    var body: some Scene
-    {
-		// Window & View hierarchy
+	@ViewBuilder static public func customView(for model:Any) -> some View
+	{
+		// Create a custom view for some model types (as required by the UI design of the host app)
 		
-        WindowGroup
-        {
-			BrowserView()
-			
-				.environmentObject(ImageLibrary.shared)
-				.environmentObject(VideoLibrary.shared)
-				.environmentObject(AudioLibrary.shared)
-				
-				.environment(\.viewFactory, CustomViewFactory())
-        }
-       
-        // Menu items
-        
-        .commands
-        {
-			CommandGroup(after:.newItem)
-			{
-				Button("Add Image Folder…")
-				{
-					let library = ImageLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
-
-				Button("Add Video Folder…")
-				{
-					let library = VideoLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
-
-				Button("Add Audio Folder…")
-				{
-					let library = AudioLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
-			}
+		if let container = model as? Container
+		{
+			ContainerView(with:container)
 		}
-    }
+		
+		// Use default views (provided) by the BXMediaBrowser package for all other model types
+		
+		else
+		{
+			DefaultViewFactory.defaultView(for:model)
+		}
+	}
 }
 
 
 //----------------------------------------------------------------------------------------------------------------------
-
-
