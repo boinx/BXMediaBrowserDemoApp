@@ -68,7 +68,7 @@ class GenericLibrary : Library
 		self.foldersSection = foldersSection
 		self.addSection(foldersSection)
 		
-		// When the user clicks on the + button in the Folder section, then add a new Container for a user selected folder
+		// When the user clicks on the "+" button in the Folder section, then add a new Container for a user selected folder
 		
 		foldersSection.addSourceHandler =
 		{
@@ -79,19 +79,19 @@ class GenericLibrary : Library
 		
 		// When the application launches, restore the last known state of the library
 		
-		self.observers += NotificationCenter.default.publisher(for:NSApplication.didFinishLaunchingNotification, object:nil).sink
-		{
-			[weak self] _ in
-			self?.restoreState()
-		}
+//		self.observers += NotificationCenter.default.publisher(for:NSApplication.didFinishLaunchingNotification, object:nil).sink
+//		{
+//			[weak self] _ in
+//			self?.restoreState()
+//		}
 		
 		// When the application quits, save the current state of the library
 		
-		self.observers += NotificationCenter.default.publisher(for:NSApplication.willTerminateNotification, object:nil).sink
-		{
-			[weak self] _ in
-			self?.saveState()
-		}
+//		self.observers += NotificationCenter.default.publisher(for:NSApplication.willTerminateNotification, object:nil).sink
+//		{
+//			[weak self] _ in
+//			self?.saveState()
+//		}
 	}
 	
 
@@ -123,30 +123,37 @@ class GenericLibrary : Library
 //----------------------------------------------------------------------------------------------------------------------
 
 
+	private var statePrefsKey:String
+	{
+		"BXMediaBrowser.Library.\(identifier)".replacingOccurrences(of:".", with:"-")
+	}
+
+
+	public var state:[String:Any]?
+	{
+		set { UserDefaults.standard.set(newValue, forKey:statePrefsKey) }
+		get { UserDefaults.standard.dictionary(forKey:statePrefsKey) 	}
+	}
+	
+	
 	func saveState()
 	{
 		Task
 		{
-			var info:[String:Any] = [:]
-			await self.saveState(to:&info)
-			UserDefaults.standard.set(info, forKey:statePrefsKey)
-			Swift.print("\(Self.self).\(#function)")
+			ProcessInfo.processInfo.disableSuddenTermination()
+			
+			let activity = ProcessInfo.processInfo.beginActivity(
+				options: [.suddenTerminationDisabled,.automaticTerminationDisabled,.userInitiated],
+				reason: "Saving Library State")
+			
+			Swift.print("\(Self.self).\(#function) START")
+			let state = await self.state()
+			UserDefaults.standard.set(state, forKey:statePrefsKey)
+			Swift.print("\(Self.self).\(#function) END")
+
+			ProcessInfo.processInfo.endActivity(activity)
+			ProcessInfo.processInfo.enableSuddenTermination()
 		}
-	}
-	
-	func restoreState()
-	{
-		Task
-		{
-			guard let info = UserDefaults.standard.dictionary(forKey:statePrefsKey) else { return }
-			await self.restoreState(from:info)
-			Swift.print("\(Self.self).\(#function)")
-		}
-	}
-	
-	private var statePrefsKey:String
-	{
-		"BXMediaBrowser.Library.\(identifier)".replacingOccurrences(of:".", with:"-")
 	}
 }
 

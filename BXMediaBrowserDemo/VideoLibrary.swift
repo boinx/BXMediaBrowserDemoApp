@@ -50,7 +50,7 @@ class VideoLibrary : GenericLibrary
 		self.folderSource = folderSource
 		foldersSection?.addSource(folderSource)
 
-		self.load()
+		self.load(with:self.state)
 	}
 	
 	

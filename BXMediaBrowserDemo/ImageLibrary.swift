@@ -51,7 +51,7 @@ class ImageLibrary : GenericLibrary
 		foldersSection?.addSource(folderSource)
 		
 //		self.restoreState()
-		self.load()
+		self.load(with:self.state)
 	}
 	
 

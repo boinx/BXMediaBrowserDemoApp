@@ -32,6 +32,9 @@ import BXMediaBrowser
 
 @main struct MediaBrowserTestApp : App
 {
+	@NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+//    @Environment(\.scenePhase) private var scenePhase
+
 	// Setup
 	
 	init()
@@ -89,3 +92,27 @@ import BXMediaBrowser
 //----------------------------------------------------------------------------------------------------------------------
 
 
+class AppDelegate: NSObject, NSApplicationDelegate
+{
+	var didSaveState = false
+	
+	func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply
+	{
+		if !didSaveState
+		{
+			ImageLibrary.shared.saveState()
+			VideoLibrary.shared.saveState()
+			AudioLibrary.shared.saveState()
+			didSaveState = true
+			return .terminateCancel
+		}
+		
+		return .terminateNow
+	}
+	
+    func applicationWillTerminate(_ notification:Notification)
+    {
+    
+    }
+
+}
