@@ -97,43 +97,24 @@ class GenericLibrary : Library
     func createContainer(for url:URL) -> FolderContainer
     {
 		FolderContainer(url:url)
+		{
+			[weak self] in self?.folderSource?.removeContainer($0)
+		}
     }
 
 
 //----------------------------------------------------------------------------------------------------------------------
 
 
-	private var statePrefsKey:String
+	override func saveState(_ state:[String:Any])
 	{
-		"BXMediaBrowser.Library.\(identifier)".replacingOccurrences(of:".", with:"-")
+		self.state = state
 	}
-
 
 	public var state:[String:Any]?
 	{
-		set { UserDefaults.standard.set(newValue, forKey:statePrefsKey) }
-		get { UserDefaults.standard.dictionary(forKey:statePrefsKey) 	}
-	}
-	
-	
-	func saveState()
-	{
-		Task
-		{
-			ProcessInfo.processInfo.disableSuddenTermination()
-			
-			let activity = ProcessInfo.processInfo.beginActivity(
-				options: [.suddenTerminationDisabled,.automaticTerminationDisabled,.userInitiated],
-				reason: "Saving Library State")
-			
-			Swift.print("\(Self.self).\(#function) START")
-			let state = await self.state()
-			UserDefaults.standard.set(state, forKey:statePrefsKey)
-			Swift.print("\(Self.self).\(#function) END")
-
-			ProcessInfo.processInfo.endActivity(activity)
-			ProcessInfo.processInfo.enableSuddenTermination()
-		}
+		set { UserDefaults.standard.set(newValue, forKey:stateKey) }
+		get { UserDefaults.standard.dictionary(forKey:stateKey) }
 	}
 }
 
