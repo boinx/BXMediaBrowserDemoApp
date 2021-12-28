@@ -39,7 +39,7 @@ import BXMediaBrowser
 	
 	init()
 	{
-
+		ProcessInfo.processInfo.disableSuddenTermination()
 	}
 	
     var body: some Scene
@@ -49,18 +49,28 @@ import BXMediaBrowser
         WindowGroup
         {
 			BrowserView()
-			
 				.environmentObject(ImageLibrary.shared)
 				.environmentObject(VideoLibrary.shared)
 				.environmentObject(AudioLibrary.shared)
-				
 				.environment(\.viewFactory, CustomViewFactory())
         }
+//        .onChange(of:scenePhase)
+//        {
+//			phase in
+//
+//            if phase == .background
+//            {
+//				ImageLibrary.shared.saveState()
+//				VideoLibrary.shared.saveState()
+//				AudioLibrary.shared.saveState()
+//            }
+//        }
        
         // Menu items
         
         .commands
         {
+			
 			CommandGroup(after:.newItem)
 			{
 				Button("Add Image Folder…")

@@ -27,6 +27,7 @@
 		D02F46BD277881C100C959A4 /* GenericLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericLibrary.swift; sourceTree = "<group>"; };
 		D05F09E3277476550037C3E4 /* BXMediaBrowser */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BXMediaBrowser; path = ../BXMediaBrowser; sourceTree = "<group>"; };
 		D0853A432779E34200987C23 /* CustomViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewFactory.swift; sourceTree = "<group>"; };
+		D0853A45277B08EF00987C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D0A1B845275B882300BEA8E8 /* BXMediaBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BXMediaBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A1B848275B882300BEA8E8 /* BXMediaBrowserDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXMediaBrowserDemoApp.swift; sourceTree = "<group>"; };
 		D0A1B84C275B882500BEA8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		D0A1B847275B882300BEA8E8 /* BXMediaBrowserDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D0853A45277B08EF00987C23 /* Info.plist */,
 				D0A1B851275B882500BEA8E8 /* BXMediaBrowserDemo.entitlements */,
 				D0A1B848275B882300BEA8E8 /* BXMediaBrowserDemoApp.swift */,
 				D0853A432779E34200987C23 /* CustomViewFactory.swift */,
@@ -314,6 +316,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BXMediaBrowserDemo/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to the Photos library is required by the media browser";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -342,6 +345,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BXMediaBrowserDemo/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to the Photos library is required by the media browser";
 				LD_RUNPATH_SEARCH_PATHS = (
