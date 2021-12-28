@@ -42,10 +42,6 @@ class GenericLibrary : Library
 	
 	var folderSource:FolderSource? = nil
 	
-	/// References to observers
-	
-	var observers:[Any] = []
-	
 	
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -76,22 +72,6 @@ class GenericLibrary : Library
 			guard let self = self else { return }
 			self.addFolder(to:self.folderSource)
 		}
-		
-		// When the application launches, restore the last known state of the library
-		
-//		self.observers += NotificationCenter.default.publisher(for:NSApplication.didFinishLaunchingNotification, object:nil).sink
-//		{
-//			[weak self] _ in
-//			self?.restoreState()
-//		}
-		
-		// When the application quits, save the current state of the library
-		
-//		self.observers += NotificationCenter.default.publisher(for:NSApplication.willTerminateNotification, object:nil).sink
-//		{
-//			[weak self] _ in
-//			self?.saveState()
-//		}
 	}
 	
 
