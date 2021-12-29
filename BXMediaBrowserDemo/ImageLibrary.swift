@@ -34,10 +34,10 @@ class ImageLibrary : GenericLibrary
 {
 	/// Shared singleton instance
 	
-	static let shared = ImageLibrary(identifier:"Images")
+	static let shared = ImageLibrary(identifier:"ImageLibrary")
 	
 	
-	/// Creates the basic structure of the SampleLibrary
+	/// Creates the basic structure of the ImageLibrary
 	
 	override init(identifier:String)
 	{

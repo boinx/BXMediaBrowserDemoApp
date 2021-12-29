@@ -34,10 +34,10 @@ class AudioLibrary : GenericLibrary
 {
 	/// Shared singleton instance
 	
-	static let shared = AudioLibrary(identifier:"Audio")
+	static let shared = AudioLibrary(identifier:"AudioLibrary")
 	
 	
-	/// Creates the basic structure of the SampleLibrary
+	/// Creates the basic structure of the AudioLibrary
 	
 	override init(identifier:String)
 	{

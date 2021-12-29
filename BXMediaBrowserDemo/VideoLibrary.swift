@@ -34,10 +34,10 @@ class VideoLibrary : GenericLibrary
 {
 	/// Shared singleton instance
 	
-	static let shared = VideoLibrary(identifier:"Videos")
+	static let shared = VideoLibrary(identifier:"VideoLibrary")
 	
 	
-	/// Creates the basic structure of the SampleLibrary
+	/// Creates the basic structure of the VideoLibrary
 	
 	override init(identifier:String)
 	{
