@@ -50,7 +50,9 @@ struct BrowserView : View
 	
     var body: some View
     {
-		HSplitView
+		let container = self.selectedLibrary.selectedContainer
+
+		return HSplitView
 		{
 			// Sidebar
 			
@@ -90,7 +92,7 @@ struct BrowserView : View
 			
 			// Selected Container with Objects
 			
-			if let container = self.selectedLibrary.selectedContainer
+			if let container = container
 			{
 				ObjectsView(with:container)
 					.environmentObject(self.selectedLibrary)
@@ -101,6 +103,14 @@ struct BrowserView : View
 				EmptyObjectsView()
 					.layoutPriority(1)
 			}
+
+////			ScrollView
+////			{
+//				BXCollectionView(container:container)
+//					.border(Color.green)
+//					.environmentObject(self.selectedLibrary)
+//					.layoutPriority(1)
+////			}
 		}
     }
 }
