@@ -96,11 +96,13 @@ struct BrowserView : View
 			{
 				ObjectsView(with:container)
 					.environmentObject(self.selectedLibrary)
+					.frame(minWidth:240, maxWidth:.infinity)
 					.layoutPriority(1)
 			}
 			else
 			{
 				EmptyObjectsView()
+					.frame(minWidth:240, maxWidth:.infinity)
 					.layoutPriority(1)
 			}
 
