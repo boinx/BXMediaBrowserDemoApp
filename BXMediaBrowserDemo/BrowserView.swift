@@ -92,27 +92,24 @@ struct BrowserView : View
 			
 			VStack
 			{
-				// Selected Container with Objects
-			
 				if let container = container
 				{
 					SearchBar(with:selectedLibrary)
 						.environmentObject(container)
-						
-					ObjectsView(with:container)
-				}
-				else
-				{
-					EmptyObjectsView()
 				}
 
-	////			ScrollView
-	////			{
-	//				BXCollectionView(container:container)
-	//					.border(Color.green)
-	//					.environmentObject(self.selectedLibrary)
-	//					.layoutPriority(1)
-	////			}
+				// Selected Container with Objects
+			
+//				if let container = container
+//				{
+///					ObjectsView(with:container)
+//				}
+//				else
+//				{
+//					EmptyObjectsView()
+//				}
+
+				CollectionView(container:container, cellType:ImageCell.self)
 			}
 			.environmentObject(self.selectedLibrary)
 			.frame(minWidth:240, maxWidth:.infinity)
