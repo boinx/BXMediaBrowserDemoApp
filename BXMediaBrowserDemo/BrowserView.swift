@@ -90,29 +90,33 @@ struct BrowserView : View
 			.background(.thinMaterial)
 			.frame(minWidth:240)
 			
-			// Selected Container with Objects
+			VStack
+			{
+				// Selected Container with Objects
 			
-			if let container = container
-			{
-				ObjectsView(with:container)
-					.environmentObject(self.selectedLibrary)
-					.frame(minWidth:240, maxWidth:.infinity)
-					.layoutPriority(1)
-			}
-			else
-			{
-				EmptyObjectsView()
-					.frame(minWidth:240, maxWidth:.infinity)
-					.layoutPriority(1)
-			}
+				if let container = container
+				{
+					SearchBar(with:selectedLibrary)
+						.environmentObject(container)
+						
+					ObjectsView(with:container)
+				}
+				else
+				{
+					EmptyObjectsView()
+				}
 
-////			ScrollView
-////			{
-//				BXCollectionView(container:container)
-//					.border(Color.green)
-//					.environmentObject(self.selectedLibrary)
-//					.layoutPriority(1)
-////			}
+	////			ScrollView
+	////			{
+	//				BXCollectionView(container:container)
+	//					.border(Color.green)
+	//					.environmentObject(self.selectedLibrary)
+	//					.layoutPriority(1)
+	////			}
+			}
+			.environmentObject(self.selectedLibrary)
+			.frame(minWidth:240, maxWidth:.infinity)
+			.layoutPriority(1)
 		}
     }
 }
