@@ -109,7 +109,7 @@ struct BrowserView : View
 //					EmptyObjectsView()
 //				}
 
-				CollectionView(container:container, cellType:ImageCell.self)
+				CollectionView(container:container, cellType:ImageThumbnailCell.self)
 			}
 			.environmentObject(self.selectedLibrary)
 			.frame(minWidth:240, maxWidth:.infinity)
