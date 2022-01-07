@@ -35,6 +35,7 @@ struct BrowserView : View
 	@EnvironmentObject var imageLibrary:ImageLibrary
 	@EnvironmentObject var videoLibrary:VideoLibrary
 	@EnvironmentObject var audioLibrary:AudioLibrary
+	@Environment(\.viewFactory) private var viewFactory
 	
 	@State private var mediaType = 0
 	
@@ -99,6 +100,9 @@ struct BrowserView : View
 				}
 
 				// Selected Container with Objects
+
+				let cellType = viewFactory.objectCellType(for:container)
+				CollectionView(container:container, cellType:cellType)
 			
 //				if let container = container
 //				{
@@ -108,8 +112,6 @@ struct BrowserView : View
 //				{
 //					EmptyObjectsView()
 //				}
-
-				CollectionView(container:container, cellType:ImageThumbnailCell.self)
 			}
 			.environmentObject(self.selectedLibrary)
 			.frame(minWidth:240, maxWidth:.infinity)

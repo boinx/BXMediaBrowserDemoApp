@@ -59,6 +59,13 @@ public struct CustomViewFactory : ViewFactory
 			DefaultViewFactory.defaultView(for:model)
 		}
 	}
+
+	/// Returns the type of ObjectCell subclass to be used for the specified Container
+	
+	public func objectCellType(for container:Container?) -> ObjectCell.Type
+	{
+		DefaultViewFactory.defaultObjectCellType(for:container)
+	}
 }
 
 
