@@ -43,6 +43,9 @@ class AudioLibrary : GenericLibrary
 	{
 		super.init(identifier:identifier)
 
+		let musicSource = MusicSource()
+		librariesSection?.addSource(musicSource)
+	
 		let folderSource = AudioFolderSource()
 		self.folderSource = folderSource
 		foldersSection?.addSource(folderSource)
