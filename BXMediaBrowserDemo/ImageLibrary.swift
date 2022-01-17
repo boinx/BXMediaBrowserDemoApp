@@ -49,7 +49,7 @@ class ImageLibrary : GenericLibrary
 		if let data = BXKeychain.data(forKey:"api_unsplash_com_accessKey")
 		{
 			let key = String(decoding:data, as:UTF8.self)
-			UnsplashConfig.shared.accessKey = key //"VKrgdYuo88hVc1dsG30xE6OjunULacXlvcfdIO6-Zlw"
+			UnsplashConfig.shared.accessKey = key
 			let unsplashSource = UnsplashSource()
 			internetSection?.addSource(unsplashSource)
 		}
