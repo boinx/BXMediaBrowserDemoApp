@@ -91,27 +91,20 @@ struct BrowserView : View
 			.background(.thinMaterial)
 			.frame(minWidth:240)
 			
-			VStack
+			VStack(spacing:0)
 			{
-				if let container = container
-				{
-					SearchBar(with:selectedLibrary)
-						.environmentObject(container)
-				}
+				// Header
+				
+				viewFactory.objectsHeaderView(for:selectedLibrary)
 
-				// Selected Container with Objects
+				// Objects of selected Container
 
 				let cellType = viewFactory.objectCellType(for:container)
 				CollectionView(container:container, cellType:cellType)
-			
-//				if let container = container
-//				{
-///					ObjectsView(with:container)
-//				}
-//				else
-//				{
-//					EmptyObjectsView()
-//				}
+
+				// Footer
+				
+				viewFactory.objectsFooterView(for:selectedLibrary)
 			}
 			.environmentObject(self.selectedLibrary)
 			.frame(minWidth:240, maxWidth:.infinity)

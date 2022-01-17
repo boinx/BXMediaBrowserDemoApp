@@ -34,32 +34,40 @@ public struct CustomViewFactory : ViewFactory
 {
 	// Create the View and wrap it in a type-erased AnyView
 	
-	public func build(with model:Any) -> AnyView
+	public func containerView(for model:Any) -> AnyView
 	{
-		let view = Self.customView(for:model)
+		// If desired, create a custom view for some model classes here
+		
+		if false
+		{
+		
+		}
+		
+		// For all other model classes you can simply use the default views
+		
+		let view = DefaultViewFactory.defaultContainerView(for:model)
 		return AnyView(view)
 	}
 
 
-	/// This function creates custom views as needed for the host application
+	/// Returns a header view that is appropriate for the currently selected Container of the Library
 	
-	@ViewBuilder static public func customView(for model:Any) -> some View
+	public func objectsHeaderView(for library:Library) -> AnyView
 	{
-		// Create a custom view for some model types (as required by the UI design of the host app)
-		
-		if let container = model as? Container
-		{
-			ContainerView(with:container)
-		}
-		
-		// Use default views (provided) by the BXMediaBrowser package for all other model types
-		
-		else
-		{
-			DefaultViewFactory.defaultView(for:model)
-		}
+		let view = DefaultViewFactory.defaultObjectsHeaderView(for:library)
+		return AnyView(view)
 	}
+	
 
+	/// Returns a footer view that is appropriate for the currently selected Container
+	
+	public func objectsFooterView(for library:Library) -> AnyView
+	{
+		let view = DefaultViewFactory.defaultObjectsFooterView(for:library)
+		return AnyView(view)
+	}
+	
+	
 	/// Returns the type of ObjectCell subclass to be used for the specified Container
 	
 	public func objectCellType(for container:Container?) -> ObjectCell.Type
