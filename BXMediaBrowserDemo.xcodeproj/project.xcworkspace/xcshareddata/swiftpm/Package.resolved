@@ -2,11 +2,11 @@
   "object": {
     "pins": [
       {
-        "package": "BXMediaBrowser",
-        "repositoryURL": "git@github.com:boinx/BXMediaBrowser.git",
+        "package": "BXSwiftUtils",
+        "repositoryURL": "git@github.com:boinx/BXSwiftUtils.git",
         "state": {
-          "branch": "main",
-          "revision": "7ae04efd7f80f2b52fade932e7b5595638bbe722",
+          "branch": "master",
+          "revision": "720ce2dec33454ad8fe4427db1539b59f5ddcf64",
           "version": null
         }
       }
