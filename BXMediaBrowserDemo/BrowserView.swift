@@ -37,7 +37,7 @@ struct BrowserView : View
 	@EnvironmentObject var audioLibrary:AudioLibrary
 	@Environment(\.viewFactory) private var viewFactory
 	
-	@State private var mediaType = 0
+	@State private var mediaType = 1
 	
 	private var selectedLibrary:Library
 	{
