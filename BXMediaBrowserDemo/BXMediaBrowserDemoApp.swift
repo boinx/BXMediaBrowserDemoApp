@@ -45,7 +45,7 @@ import SwiftUI
     {
 		// Window & View hierarchy
 		
-        WindowGroup
+        WindowGroup("Media Browser")
         {
 			BrowserView()
 				.environmentObject(ImageLibrary.shared)
@@ -53,35 +53,13 @@ import SwiftUI
 				.environmentObject(AudioLibrary.shared)
 				.environment(\.viewFactory, CustomViewFactory())
         }
-       
-        // Menu items
-        
-        .commands
-        {
-			
-			CommandGroup(after:.newItem)
-			{
-				Button("Add Image Folder…")
-				{
-					let library = ImageLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
+    }
+}
 
-				Button("Add Video Folder…")
-				{
-					let library = VideoLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
 
-				Button("Add Audio Folder…")
-				{
-					let library = AudioLibrary.shared
-					let source = library.folderSource
-					library.addFolder(to:source)
-				}
-			}
+//----------------------------------------------------------------------------------------------------------------------
+
+
 // MARK: - Logging
 		
 extension MediaBrowserTestApp
