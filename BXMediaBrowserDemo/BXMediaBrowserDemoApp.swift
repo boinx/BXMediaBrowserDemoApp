@@ -23,8 +23,9 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 
-import SwiftUI
 import BXMediaBrowser
+import BXSwiftUtils
+import SwiftUI
 
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -37,6 +38,7 @@ import BXMediaBrowser
 	init()
 	{
 		ProcessInfo.processInfo.disableSuddenTermination()
+		Self.openLogFile()
 	}
 	
     var body: some Scene
@@ -80,8 +82,50 @@ import BXMediaBrowser
 					library.addFolder(to:source)
 				}
 			}
+// MARK: - Logging
+		
+extension MediaBrowserTestApp
+{
+
+	/// Returns the URL of the local log file
+	
+	static private var logFileURL: URL?
+	{
+		if let appSupportURL = FileManager.default.urls(for:.applicationSupportDirectory, in:.userDomainMask).first
+		{
+			return appSupportURL.appendingPathComponent("BXMediaBrowserDemoLog.txt")
 		}
-    }
+			
+		return nil
+	}
+	
+	
+	/// Opens a log file in the application support directory
+	
+	static public func openLogFile()
+	{
+		if let url = self.logFileURL
+		{
+			try? BXLogger.truncateLogFile(at:url, toMaxSize:1000000)
+			try? BXLogger.openLogFile(at:url)
+			BXSwiftUtils.log.addDestination(BXLogger.fileDestination)
+		}
+		
+		BXMediaBrowser.log.maxLevel = .debug 					// Root logger can disable all logging!
+		BXMediaBrowser.logDataModel.maxLevel = .warning
+		BXMediaBrowser.FolderSource.log.maxLevel = .warning
+		BXMediaBrowser.MusicSource.log.maxLevel = .warning
+		BXMediaBrowser.PhotosSource.log.maxLevel = .warning
+		BXMediaBrowser.UnsplashSource.log.maxLevel = .warning
+	}
+	
+	
+	/// Closes the log file
+	
+	static public func closeLogFile()
+	{
+		BXLogger.closeLogFile()
+	}
 }
 
 
