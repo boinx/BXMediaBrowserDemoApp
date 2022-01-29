@@ -38,10 +38,10 @@ public struct CustomViewFactory : ViewFactory
 	{
 		// If desired, create a custom view for some model classes here
 		
-		if false
-		{
-		
-		}
+//		if model is ...
+//		{
+//			return AnyView(MyCustomContainerView(for:model))
+//		}
 		
 		// For all other model classes you can simply use the default views
 		
