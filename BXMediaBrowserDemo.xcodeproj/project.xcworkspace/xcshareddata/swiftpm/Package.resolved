@@ -2,11 +2,20 @@
   "object": {
     "pins": [
       {
+        "package": "BXSwiftUI",
+        "repositoryURL": "git@github.com:boinx/BXSwiftUI.git",
+        "state": {
+          "branch": "master",
+          "revision": "4206439111e83038b3d5e7fd6cd497261e040c6f",
+          "version": null
+        }
+      },
+      {
         "package": "BXSwiftUtils",
         "repositoryURL": "git@github.com:boinx/BXSwiftUtils.git",
         "state": {
           "branch": "master",
-          "revision": "720ce2dec33454ad8fe4427db1539b59f5ddcf64",
+          "revision": "2f20436d9fc86074cbd199f269501fac838a6596",
           "version": null
         }
       }
