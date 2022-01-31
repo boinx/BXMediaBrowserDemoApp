@@ -35,9 +35,11 @@ struct BrowserView : View
 	@EnvironmentObject var imageLibrary:ImageLibrary
 	@EnvironmentObject var videoLibrary:VideoLibrary
 	@EnvironmentObject var audioLibrary:AudioLibrary
+	
 	@Environment(\.viewFactory) private var viewFactory
 	
 	@State private var mediaType = 1
+	
 	
 	private var selectedLibrary:Library
 	{
@@ -49,68 +51,73 @@ struct BrowserView : View
 		}
 	}
 	
+	
     var body: some View
     {
-		let container = self.selectedLibrary.selectedContainer
-
-		return HSplitView
+		HSplitView
 		{
-			// Sidebar
-			
-			VStack
-			{
-				// MediaType
-				
-				Picker("", selection:$mediaType)
-				{
-					Text("Images").tag(0)
-					Text("Videos").tag(1)
-					Text("Audio").tag(2)
-				}
-				.pickerStyle(.segmented)
-				.padding(10)
-				
-				// Library
-				
-				ScrollView
-				{
-					if mediaType == 0
-					{
-						LibraryView(with:imageLibrary)
-					}
-					else if mediaType == 1
-					{
-						LibraryView(with:videoLibrary)
-					}
-					else if mediaType == 2
-					{
-						LibraryView(with:audioLibrary)
-					}
-				}
-			}
-			.background(.thinMaterial)
-			.frame(minWidth:240)
-			
-			VStack(spacing:0)
-			{
-				// Header
-				
-				viewFactory.objectsHeaderView(for:selectedLibrary)
-
-				// Objects of selected Container
-
-				let cellType = viewFactory.objectCellType(for:container)
-				CollectionView(container:container, cellType:cellType)
-
-				// Footer
-				
-				viewFactory.objectsFooterView(for:selectedLibrary)
-			}
-			.environmentObject(self.selectedLibrary)
-			.frame(minWidth:240, maxWidth:.infinity)
-			.layoutPriority(1)
+			self.sidebar
+			self.objectBrowser.layoutPriority(1)
 		}
     }
+    
+    
+    var sidebar: some View
+    {
+		VStack
+		{
+			// MediaType
+			
+			Picker("", selection:$mediaType)
+			{
+				Text("Images").tag(0)
+				Text("Videos").tag(1)
+				Text("Audio").tag(2)
+			}
+			.pickerStyle(.segmented)
+			.padding(10)
+			
+			// Library
+			
+			ScrollView
+			{
+				if mediaType == 0
+				{
+					LibraryView(with:imageLibrary)
+				}
+				else if mediaType == 1
+				{
+					LibraryView(with:videoLibrary)
+				}
+				else if mediaType == 2
+				{
+					LibraryView(with:audioLibrary)
+				}
+			}
+		}
+		.background(.thinMaterial)
+		.frame(minWidth:240)
+    }
+    
+    
+	var objectBrowser: some View
+    {
+		let library = self.selectedLibrary
+		let container = library.selectedContainer
+		let cellType = viewFactory.objectCellType(for:container)
+
+		return VStack(spacing:0)
+		{
+			viewFactory.objectsHeaderView(for:selectedLibrary)
+
+			CollectionView(library:library, container:container, cellType:cellType)
+
+			viewFactory.objectsFooterView(for:selectedLibrary)
+		}
+		.environmentObject(library)
+		.frame(minWidth:240, maxWidth:.infinity)
+    }
+
 }
 
 
