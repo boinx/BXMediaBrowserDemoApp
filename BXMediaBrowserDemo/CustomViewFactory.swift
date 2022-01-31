@@ -30,50 +30,64 @@ import SwiftUI
 //----------------------------------------------------------------------------------------------------------------------
 
 
-public struct CustomViewFactory : ViewFactory
+final class CustomViewFactory : ViewFactory
 {
-	// Create the View and wrap it in a type-erased AnyView
-	
-	public func containerView(for model:Any) -> AnyView
+	override init()
 	{
-		// If desired, create a custom view for some model classes here
-		
-//		if model is ...
-//		{
-//			return AnyView(MyCustomContainerView(for:model))
-//		}
-		
-		// For all other model classes you can simply use the default views
-		
-		let view = DefaultViewFactory.defaultContainerView(for:model)
-		return AnyView(view)
+		super.init()
+	}
+	
+	// Create a custom View and wrap it in a type-erased AnyView
+	
+	override public func containerView(for container:Container) -> AnyView
+	{
+		AnyView(Group
+		{
+//			if container is PhotosContainer
+//			{
+//				ContainerView(with:container).border(Color.red)
+//			}
+//			else
+//			{
+				ViewFactory.defaultContainerView(for:container)
+//			}
+		})
 	}
 
 
-	/// Returns a header view that is appropriate for the currently selected Container of the Library
+	// Provide custom context menu
 	
-	public func objectsHeaderView(for library:Library) -> AnyView
+	override public func containerContextMenu(for container:Container) -> AnyView
 	{
-		let view = DefaultViewFactory.defaultObjectsHeaderView(for:library)
-		return AnyView(view)
-	}
-	
+		AnyView(Group
+		{
+			if container is PhotosContainer
+			{
+				Button("Beep")
+				{
+					NSSound.beep()
+				}
 
-	/// Returns a footer view that is appropriate for the currently selected Container
-	
-	public func objectsFooterView(for library:Library) -> AnyView
-	{
-		let view = DefaultViewFactory.defaultObjectsFooterView(for:library)
-		return AnyView(view)
+				Button("Bop")
+				{
+					NSSound.beep()
+				}
+			}
+			else
+			{
+				ViewFactory.defaultContainerContextMenu(for:container)
+			}
+		})
 	}
-	
-	
+
+
 	/// Returns the type of ObjectCell subclass to be used for the specified Container
 	
-	public func objectCellType(for container:Container?) -> ObjectCell.Type
+	override public func objectCellType(for container:Container?) -> ObjectCell.Type
 	{
-		DefaultViewFactory.defaultObjectCellType(for:container)
+		super.objectCellType(for:container)
 	}
+
 }
 
 
