@@ -32,14 +32,16 @@ import BXMediaBrowser
 
 struct BrowserView : View
 {
+	// Environment
+	
 	@EnvironmentObject var imageLibrary:ImageLibrary
 	@EnvironmentObject var videoLibrary:VideoLibrary
 	@EnvironmentObject var audioLibrary:AudioLibrary
-	
 	@Environment(\.viewFactory) private var viewFactory
 	
-	@State private var mediaType = 1
+	// Switch between different libraries
 	
+	@State private var mediaType = 1
 	
 	private var selectedLibrary:Library
 	{
@@ -51,6 +53,7 @@ struct BrowserView : View
 		}
 	}
 	
+	// Build View
 	
     var body: some View
     {
@@ -61,13 +64,12 @@ struct BrowserView : View
 		}
     }
     
+    // Sidebar View
     
     var sidebar: some View
     {
 		VStack
 		{
-			// MediaType
-			
 			Picker("", selection:$mediaType)
 			{
 				Text("Images").tag(0)
@@ -76,8 +78,6 @@ struct BrowserView : View
 			}
 			.pickerStyle(.segmented)
 			.padding(10)
-			
-			// Library
 			
 			ScrollView
 			{
@@ -99,6 +99,7 @@ struct BrowserView : View
 		.frame(minWidth:240)
     }
     
+    // Object Browser
     
 	var objectBrowser: some View
     {
@@ -108,13 +109,10 @@ struct BrowserView : View
 
 		return VStack(spacing:0)
 		{
-			viewFactory.objectsHeaderView(for:selectedLibrary)
-
-			CollectionView(library:library, container:container, cellType:cellType)
-
-			viewFactory.objectsFooterView(for:selectedLibrary)
+			viewFactory.objectsHeaderView(for:library, container:container)
+			CollectionView(for:library, container:container, cellType:cellType)
+			viewFactory.objectsFooterView(for:library, container:container)
 		}
-		.environmentObject(library)
 		.frame(minWidth:240, maxWidth:.infinity)
     }
 
