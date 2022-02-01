@@ -105,7 +105,7 @@ struct BrowserView : View
     {
 		let library = self.selectedLibrary
 		let container = library.selectedContainer
-		let cellType = viewFactory.objectCellType(for:container)
+		let cellType = viewFactory.objectViewControllerType(for:container)
 
 		return VStack(spacing:0)
 		{
