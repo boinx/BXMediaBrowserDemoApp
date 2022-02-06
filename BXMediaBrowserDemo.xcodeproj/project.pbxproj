@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D02F46B6277867B600C959A4 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F46B5277867B600C959A4 /* BrowserView.swift */; };
-		D02F46B8277868F100C959A4 /* ImageLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F46B7277868F100C959A4 /* ImageLibrary.swift */; };
-		D02F46BA277880AE00C959A4 /* VideoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F46B9277880AD00C959A4 /* VideoLibrary.swift */; };
-		D02F46BC277880BA00C959A4 /* AudioLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F46BB277880BA00C959A4 /* AudioLibrary.swift */; };
-		D02F46BE277881C200C959A4 /* GenericLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F46BD277881C100C959A4 /* GenericLibrary.swift */; };
-		D05F09E22774761D0037C3E4 /* BXMediaBrowser in Frameworks */ = {isa = PBXBuildFile; productRef = D05F09E12774761D0037C3E4 /* BXMediaBrowser */; };
-		D0853A442779E34300987C23 /* CustomViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0853A432779E34200987C23 /* CustomViewFactory.swift */; };
-		D09F1B1F27A5A23500097FA9 /* BXSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D09F1B1E27A5A23500097FA9 /* BXSwiftUI */; };
-		D0A1B849275B882300BEA8E8 /* BXMediaBrowserDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1B848275B882300BEA8E8 /* BXMediaBrowserDemoApp.swift */; };
-		D0A1B84D275B882500BEA8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A1B84C275B882500BEA8E8 /* Assets.xcassets */; };
-		D0A1B850275B882500BEA8E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A1B84F275B882500BEA8E8 /* Preview Assets.xcassets */; };
+		D066B92227AFE134003BCD51 /* MediaBrowserAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066B92127AFE134003BCD51 /* MediaBrowserAppDelegate.swift */; };
+		D066B92427AFE134003BCD51 /* MediaBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066B92327AFE134003BCD51 /* MediaBrowserViewController.swift */; };
+		D066B92627AFE136003BCD51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D066B92527AFE136003BCD51 /* Assets.xcassets */; };
+		D066B92927AFE136003BCD51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D066B92727AFE136003BCD51 /* Main.storyboard */; };
+		D066B92E27AFE405003BCD51 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F46B5277867B600C959A4 /* BrowserView.swift */; };
+		D066B92F27AFE405003BCD51 /* VideoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F46B9277880AD00C959A4 /* VideoLibrary.swift */; };
+		D066B93027AFE405003BCD51 /* GenericLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F46BD277881C100C959A4 /* GenericLibrary.swift */; };
+		D066B93127AFE405003BCD51 /* ImageLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F46B7277868F100C959A4 /* ImageLibrary.swift */; };
+		D066B93227AFE405003BCD51 /* AudioLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F46BB277880BA00C959A4 /* AudioLibrary.swift */; };
+		D066B93327AFE405003BCD51 /* CustomViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0853A432779E34200987C23 /* CustomViewFactory.swift */; };
+		D066B93527AFE62A003BCD51 /* BXMediaBrowser in Frameworks */ = {isa = PBXBuildFile; productRef = D066B93427AFE62A003BCD51 /* BXMediaBrowser */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,32 +27,53 @@
 		D02F46BB277880BA00C959A4 /* AudioLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioLibrary.swift; sourceTree = "<group>"; };
 		D02F46BD277881C100C959A4 /* GenericLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericLibrary.swift; sourceTree = "<group>"; };
 		D05F09E3277476550037C3E4 /* BXMediaBrowser */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BXMediaBrowser; path = ../BXMediaBrowser; sourceTree = "<group>"; };
+		D066B91F27AFE134003BCD51 /* BXMediaBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BXMediaBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D066B92127AFE134003BCD51 /* MediaBrowserAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBrowserAppDelegate.swift; sourceTree = "<group>"; };
+		D066B92327AFE134003BCD51 /* MediaBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBrowserViewController.swift; sourceTree = "<group>"; };
+		D066B92527AFE136003BCD51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D066B92827AFE136003BCD51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D066B92A27AFE136003BCD51 /* BXMediaBrowserDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXMediaBrowserDemo.entitlements; sourceTree = "<group>"; };
 		D0853A432779E34200987C23 /* CustomViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewFactory.swift; sourceTree = "<group>"; };
 		D0853A45277B08EF00987C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		D0A1B845275B882300BEA8E8 /* BXMediaBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BXMediaBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0A1B848275B882300BEA8E8 /* BXMediaBrowserDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXMediaBrowserDemoApp.swift; sourceTree = "<group>"; };
-		D0A1B84C275B882500BEA8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D0A1B84F275B882500BEA8E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0A1B851275B882500BEA8E8 /* BXMediaBrowserDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXMediaBrowserDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D0A1B842275B882300BEA8E8 /* Frameworks */ = {
+		D066B91C27AFE134003BCD51 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D09F1B1F27A5A23500097FA9 /* BXSwiftUI in Frameworks */,
-				D05F09E22774761D0037C3E4 /* BXMediaBrowser in Frameworks */,
+				D066B93527AFE62A003BCD51 /* BXMediaBrowser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D066B92027AFE134003BCD51 /* BXMediaBrowserDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D0853A45277B08EF00987C23 /* Info.plist */,
+				D0A1B851275B882500BEA8E8 /* BXMediaBrowserDemo.entitlements */,
+				D066B92127AFE134003BCD51 /* MediaBrowserAppDelegate.swift */,
+				D066B92327AFE134003BCD51 /* MediaBrowserViewController.swift */,
+				D0853A432779E34200987C23 /* CustomViewFactory.swift */,
+				D02F46B5277867B600C959A4 /* BrowserView.swift */,
+				D02F46BD277881C100C959A4 /* GenericLibrary.swift */,
+				D02F46B7277868F100C959A4 /* ImageLibrary.swift */,
+				D02F46B9277880AD00C959A4 /* VideoLibrary.swift */,
+				D02F46BB277880BA00C959A4 /* AudioLibrary.swift */,
+				D066B92527AFE136003BCD51 /* Assets.xcassets */,
+				D066B92727AFE136003BCD51 /* Main.storyboard */,
+				D066B92A27AFE136003BCD51 /* BXMediaBrowserDemo.entitlements */,
+			);
+			path = BXMediaBrowserDemo;
+			sourceTree = "<group>";
+		};
 		D0A1B83C275B882300BEA8E8 = {
 			isa = PBXGroup;
 			children = (
-				D0A1B847275B882300BEA8E8 /* BXMediaBrowserDemo */,
+				D066B92027AFE134003BCD51 /* BXMediaBrowserDemo */,
 				D0A1B846275B882300BEA8E8 /* Products */,
 				D0D7F0B827735F1C00F0CCF2 /* Frameworks */,
 			);
@@ -61,35 +82,9 @@
 		D0A1B846275B882300BEA8E8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0A1B845275B882300BEA8E8 /* BXMediaBrowserDemo.app */,
+				D066B91F27AFE134003BCD51 /* BXMediaBrowserDemo.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D0A1B847275B882300BEA8E8 /* BXMediaBrowserDemo */ = {
-			isa = PBXGroup;
-			children = (
-				D0853A45277B08EF00987C23 /* Info.plist */,
-				D0A1B851275B882500BEA8E8 /* BXMediaBrowserDemo.entitlements */,
-				D0A1B848275B882300BEA8E8 /* BXMediaBrowserDemoApp.swift */,
-				D0853A432779E34200987C23 /* CustomViewFactory.swift */,
-				D02F46B5277867B600C959A4 /* BrowserView.swift */,
-				D02F46BD277881C100C959A4 /* GenericLibrary.swift */,
-				D02F46B7277868F100C959A4 /* ImageLibrary.swift */,
-				D02F46B9277880AD00C959A4 /* VideoLibrary.swift */,
-				D02F46BB277880BA00C959A4 /* AudioLibrary.swift */,
-				D0A1B84C275B882500BEA8E8 /* Assets.xcassets */,
-				D0A1B84E275B882500BEA8E8 /* Preview Content */,
-			);
-			path = BXMediaBrowserDemo;
-			sourceTree = "<group>";
-		};
-		D0A1B84E275B882500BEA8E8 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				D0A1B84F275B882500BEA8E8 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		D0D7F0B827735F1C00F0CCF2 /* Frameworks */ = {
@@ -103,13 +98,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D0A1B844275B882300BEA8E8 /* BXMediaBrowserDemo */ = {
+		D066B91E27AFE134003BCD51 /* BXMediaBrowserDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0A1B854275B882500BEA8E8 /* Build configuration list for PBXNativeTarget "BXMediaBrowserDemo" */;
+			buildConfigurationList = D066B92B27AFE136003BCD51 /* Build configuration list for PBXNativeTarget "BXMediaBrowserDemo" */;
 			buildPhases = (
-				D0A1B841275B882300BEA8E8 /* Sources */,
-				D0A1B842275B882300BEA8E8 /* Frameworks */,
-				D0A1B843275B882300BEA8E8 /* Resources */,
+				D066B91B27AFE134003BCD51 /* Sources */,
+				D066B91C27AFE134003BCD51 /* Frameworks */,
+				D066B91D27AFE134003BCD51 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -117,11 +112,10 @@
 			);
 			name = BXMediaBrowserDemo;
 			packageProductDependencies = (
-				D05F09E12774761D0037C3E4 /* BXMediaBrowser */,
-				D09F1B1E27A5A23500097FA9 /* BXSwiftUI */,
+				D066B93427AFE62A003BCD51 /* BXMediaBrowser */,
 			);
-			productName = MediaBrowserTest;
-			productReference = D0A1B845275B882300BEA8E8 /* BXMediaBrowserDemo.app */;
+			productName = BXMediaBrowserDemo;
+			productReference = D066B91F27AFE134003BCD51 /* BXMediaBrowserDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -134,8 +128,8 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					D0A1B844275B882300BEA8E8 = {
-						CreatedOnToolsVersion = 13.2;
+					D066B91E27AFE134003BCD51 = {
+						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
@@ -156,41 +150,107 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D0A1B844275B882300BEA8E8 /* BXMediaBrowserDemo */,
+				D066B91E27AFE134003BCD51 /* BXMediaBrowserDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D0A1B843275B882300BEA8E8 /* Resources */ = {
+		D066B91D27AFE134003BCD51 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A1B850275B882500BEA8E8 /* Preview Assets.xcassets in Resources */,
-				D0A1B84D275B882500BEA8E8 /* Assets.xcassets in Resources */,
+				D066B92627AFE136003BCD51 /* Assets.xcassets in Resources */,
+				D066B92927AFE136003BCD51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D0A1B841275B882300BEA8E8 /* Sources */ = {
+		D066B91B27AFE134003BCD51 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D02F46BC277880BA00C959A4 /* AudioLibrary.swift in Sources */,
-				D02F46B8277868F100C959A4 /* ImageLibrary.swift in Sources */,
-				D02F46BA277880AE00C959A4 /* VideoLibrary.swift in Sources */,
-				D02F46B6277867B600C959A4 /* BrowserView.swift in Sources */,
-				D0A1B849275B882300BEA8E8 /* BXMediaBrowserDemoApp.swift in Sources */,
-				D0853A442779E34300987C23 /* CustomViewFactory.swift in Sources */,
-				D02F46BE277881C200C959A4 /* GenericLibrary.swift in Sources */,
+				D066B93327AFE405003BCD51 /* CustomViewFactory.swift in Sources */,
+				D066B92427AFE134003BCD51 /* MediaBrowserViewController.swift in Sources */,
+				D066B93127AFE405003BCD51 /* ImageLibrary.swift in Sources */,
+				D066B92F27AFE405003BCD51 /* VideoLibrary.swift in Sources */,
+				D066B93227AFE405003BCD51 /* AudioLibrary.swift in Sources */,
+				D066B93027AFE405003BCD51 /* GenericLibrary.swift in Sources */,
+				D066B92227AFE134003BCD51 /* MediaBrowserAppDelegate.swift in Sources */,
+				D066B92E27AFE405003BCD51 /* BrowserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		D066B92727AFE136003BCD51 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D066B92827AFE136003BCD51 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		D066B92C27AFE136003BCD51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BXMediaBrowserDemo/BXMediaBrowserDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6372P8EH2J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = BXMediaBrowserDemo/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boinx.BXMediaBrowserDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D066B92D27AFE136003BCD51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BXMediaBrowserDemo/BXMediaBrowserDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6372P8EH2J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = BXMediaBrowserDemo/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boinx.BXMediaBrowserDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		D0A1B852275B882500BEA8E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -242,7 +302,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -297,7 +358,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -306,81 +368,23 @@
 			};
 			name = Release;
 		};
-		D0A1B855275B882500BEA8E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = BXMediaBrowserDemo/BXMediaBrowserDemo.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BXMediaBrowserDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = 6372P8EH2J;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BXMediaBrowserDemo/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to the Photos library is required by the media browser";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.boinx.BXMediaBrowserDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		D0A1B856275B882500BEA8E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = BXMediaBrowserDemo/BXMediaBrowserDemo.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BXMediaBrowserDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = 6372P8EH2J;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BXMediaBrowserDemo/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to the Photos library is required by the media browser";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.boinx.BXMediaBrowserDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D066B92B27AFE136003BCD51 /* Build configuration list for PBXNativeTarget "BXMediaBrowserDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D066B92C27AFE136003BCD51 /* Debug */,
+				D066B92D27AFE136003BCD51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D0A1B840275B882300BEA8E8 /* Build configuration list for PBXProject "BXMediaBrowserDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0A1B852275B882500BEA8E8 /* Debug */,
 				D0A1B853275B882500BEA8E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D0A1B854275B882500BEA8E8 /* Build configuration list for PBXNativeTarget "BXMediaBrowserDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D0A1B855275B882500BEA8E8 /* Debug */,
-				D0A1B856275B882500BEA8E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -407,15 +411,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D05F09E12774761D0037C3E4 /* BXMediaBrowser */ = {
+		D066B93427AFE62A003BCD51 /* BXMediaBrowser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D05F09E02774761D0037C3E4 /* XCRemoteSwiftPackageReference "BXMediaBrowser" */;
 			productName = BXMediaBrowser;
-		};
-		D09F1B1E27A5A23500097FA9 /* BXSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D09F1B1D27A5A23500097FA9 /* XCRemoteSwiftPackageReference "BXSwiftUI" */;
-			productName = BXSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

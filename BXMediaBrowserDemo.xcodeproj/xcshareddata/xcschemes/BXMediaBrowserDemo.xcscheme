@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D0A1B844275B882300BEA8E8"
+               BlueprintIdentifier = "D066B91E27AFE134003BCD51"
                BuildableName = "BXMediaBrowserDemo.app"
                BlueprintName = "BXMediaBrowserDemo"
                ReferencedContainer = "container:BXMediaBrowserDemo.xcodeproj">
@@ -45,7 +45,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D0A1B844275B882300BEA8E8"
+            BlueprintIdentifier = "D066B91E27AFE134003BCD51"
             BuildableName = "BXMediaBrowserDemo.app"
             BlueprintName = "BXMediaBrowserDemo"
             ReferencedContainer = "container:BXMediaBrowserDemo.xcodeproj">
@@ -58,16 +58,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D0A1B844275B882300BEA8E8"
-            BuildableName = "BXMediaBrowserDemo.app"
-            BlueprintName = "BXMediaBrowserDemo"
-            ReferencedContainer = "container:BXMediaBrowserDemo.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
