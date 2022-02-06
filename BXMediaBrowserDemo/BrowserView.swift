@@ -95,7 +95,6 @@ struct BrowserView : View
 				}
 			}
 		}
-		.background(.thinMaterial)
 		.frame(minWidth:240)
     }
     
