@@ -110,7 +110,7 @@ struct BrowserView : View
 		return VStack(spacing:0)
 		{
 			viewFactory.objectsHeaderView(for:library, container:container)
-			CollectionView(for:library, container:container, cellType:cellType)
+			ObjectCollectionView(for:library, container:container, cellType:cellType)
 			viewFactory.objectsFooterView(for:library, container:container)
 		}
 		.frame(minWidth:240, maxWidth:.infinity)
