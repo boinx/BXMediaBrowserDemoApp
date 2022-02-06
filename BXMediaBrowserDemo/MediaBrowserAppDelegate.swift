@@ -48,10 +48,12 @@ import BXSwiftUtils
 
 	}
 
+
 	func applicationWillTerminate(_ notification:Notification)
 	{
 		Self.closeLogFile()
 	}
+
 
 	func applicationSupportsSecureRestorableState(_ app:NSApplication) -> Bool
 	{
@@ -59,6 +61,25 @@ import BXSwiftUtils
 	}
 
 
+//----------------------------------------------------------------------------------------------------------------------
+
+
+	@IBAction func showMediaBrowser(_ sender:NSMenuItem!)
+	{
+		let storyboard = NSStoryboard(name:"Main", bundle:.main)
+		let windowController = storyboard.__instantiateController(withIdentifier:"mediaBrowser") as? NSWindowController
+		windowController?.showWindow(nil)
+	}
+	
+	
+	@IBAction func showDropTarget(_ sender:NSMenuItem!)
+	{
+		let storyboard = NSStoryboard(name:"Main", bundle:.main)
+		let windowController = storyboard.__instantiateController(withIdentifier:"dropTarget") as? NSWindowController
+		windowController?.showWindow(nil)
+	}
+	
+	
 //----------------------------------------------------------------------------------------------------------------------
 
 

@@ -18,6 +18,7 @@
 		D066B93227AFE405003BCD51 /* AudioLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F46BB277880BA00C959A4 /* AudioLibrary.swift */; };
 		D066B93327AFE405003BCD51 /* CustomViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0853A432779E34200987C23 /* CustomViewFactory.swift */; };
 		D066B93527AFE62A003BCD51 /* BXMediaBrowser in Frameworks */ = {isa = PBXBuildFile; productRef = D066B93427AFE62A003BCD51 /* BXMediaBrowser */; };
+		D066B95227B01F40003BCD51 /* DropTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066B95127B01F40003BCD51 /* DropTargetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D066B92527AFE136003BCD51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D066B92827AFE136003BCD51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D066B92A27AFE136003BCD51 /* BXMediaBrowserDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXMediaBrowserDemo.entitlements; sourceTree = "<group>"; };
+		D066B95127B01F40003BCD51 /* DropTargetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropTargetViewController.swift; sourceTree = "<group>"; };
 		D0853A432779E34200987C23 /* CustomViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewFactory.swift; sourceTree = "<group>"; };
 		D0853A45277B08EF00987C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D0A1B851275B882500BEA8E8 /* BXMediaBrowserDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXMediaBrowserDemo.entitlements; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				D0A1B851275B882500BEA8E8 /* BXMediaBrowserDemo.entitlements */,
 				D066B92127AFE134003BCD51 /* MediaBrowserAppDelegate.swift */,
 				D066B92327AFE134003BCD51 /* MediaBrowserViewController.swift */,
+				D066B95127B01F40003BCD51 /* DropTargetViewController.swift */,
 				D0853A432779E34200987C23 /* CustomViewFactory.swift */,
 				D02F46B5277867B600C959A4 /* BrowserView.swift */,
 				D02F46BD277881C100C959A4 /* GenericLibrary.swift */,
@@ -174,6 +177,7 @@
 			files = (
 				D066B93327AFE405003BCD51 /* CustomViewFactory.swift in Sources */,
 				D066B92427AFE134003BCD51 /* MediaBrowserViewController.swift in Sources */,
+				D066B95227B01F40003BCD51 /* DropTargetViewController.swift in Sources */,
 				D066B93127AFE405003BCD51 /* ImageLibrary.swift in Sources */,
 				D066B92F27AFE405003BCD51 /* VideoLibrary.swift in Sources */,
 				D066B93227AFE405003BCD51 /* AudioLibrary.swift in Sources */,

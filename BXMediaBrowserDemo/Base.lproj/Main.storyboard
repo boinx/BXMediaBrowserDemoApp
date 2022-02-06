@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,18 +60,16 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="File" id="bib-Uj-vzu">
                                     <items>
-                                        <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
+                                        <menuItem title="Open Media Browser" keyEquivalent="o" id="IAo-SY-fd9">
                                             <connections>
-                                                <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
+                                                <action selector="showMediaBrowser:" target="Voe-Tx-rLC" id="6ir-cK-qsx"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
-                                            <connections>
-                                                <action selector="openDocument:" target="Ady-hI-5gd" id="bVn-NM-KNZ"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Open Recent" id="tXI-mr-wws">
+                                        <menuItem title="Open Drop Target" id="Hfp-gP-9wj">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showDropTarget:" target="Voe-Tx-rLC" id="RtP-Cc-ZCT"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
                                         <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
@@ -147,6 +146,19 @@
                                                 <action selector="arrangeInFront:" target="Ady-hI-5gd" id="DRN-fu-gQh"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="7bt-Lc-hcR"/>
+                                        <menuItem title="Media Browser" id="tkZ-b6-j3p">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showMediaBrowser:" target="Voe-Tx-rLC" id="iSf-vh-lAo"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Drop Target" id="i8t-xf-KWg">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showDropTarget:" target="Voe-Tx-rLC" id="dZ4-pT-P1f"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -172,17 +184,17 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-637" y="-19"/>
+            <point key="canvasLocation" x="394" y="-478"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="mediaBrowser" id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Media Browser" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <rect key="contentRect" x="196" y="240" width="1200" height="1024"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="3360" height="1865"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -193,20 +205,58 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="-250" y="326.5"/>
         </scene>
         <!--Media Browser View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MediaBrowserViewController" customModule="BXMediaBrowserDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1200" height="1016"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-250" y="1509"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="I0l-31-cTS">
+            <objects>
+                <windowController storyboardIdentifier="dropTarget" id="RIx-94-vGg" sceneMemberID="viewController">
+                    <window key="window" title="Drop Target" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="Au4-fV-igt">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="1216" height="1023"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="3360" height="1865"/>
+                        <view key="contentView" id="qck-oy-u0g">
+                            <rect key="frame" x="0.0" y="0.0" width="1216" height="1023"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="RIx-94-vGg" id="uJX-r4-xVw"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="mjM-6C-nFS" kind="relationship" relationship="window.shadowedContentViewController" id="Rvk-Fg-aAJ"/>
+                    </connections>
+                </windowController>
+                <customObject id="m3u-hu-szU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070" y="325.5"/>
+        </scene>
+        <!--Drop Target View Controller-->
+        <scene sceneID="oc9-Tn-wQt">
+            <objects>
+                <viewController id="mjM-6C-nFS" customClass="DropTargetViewController" customModule="BXMediaBrowserDemo" sceneMemberID="viewController">
+                    <view key="view" id="rLp-lT-AI8">
+                        <rect key="frame" x="0.0" y="0.0" width="1216" height="1016"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="gD5-Ar-gmt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070" y="1509"/>
         </scene>
     </scenes>
 </document>
