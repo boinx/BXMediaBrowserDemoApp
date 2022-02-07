@@ -37,11 +37,12 @@ struct BrowserView : View
 	@EnvironmentObject var imageLibrary:ImageLibrary
 	@EnvironmentObject var videoLibrary:VideoLibrary
 	@EnvironmentObject var audioLibrary:AudioLibrary
+	
 	@Environment(\.viewFactory) private var viewFactory
 	
 	// Switch between different libraries
 	
-	@State private var mediaType = 1
+	@State private var mediaType = 0
 	
 	private var selectedLibrary:Library
 	{
