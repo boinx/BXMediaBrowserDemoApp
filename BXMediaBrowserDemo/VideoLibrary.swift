@@ -58,7 +58,9 @@ class VideoLibrary : GenericLibrary
 	
     override func createContainer(for url:URL) -> FolderContainer
     {
-		VideoFolderContainer(url:url)
+		let filter = self.folderSource?.filter as? FolderFilter ?? FolderFilter()
+		
+		return VideoFolderContainer(url:url, filter:filter)
 		{
 			[weak self] in self?.folderSource?.removeContainer($0)
 		}

@@ -67,7 +67,9 @@ class ImageLibrary : GenericLibrary
 	
    override func createContainer(for url:URL) -> FolderContainer
     {
-		ImageFolderContainer(url:url)
+		let filter = self.folderSource?.filter as? FolderFilter ?? FolderFilter()
+		
+		return ImageFolderContainer(url:url, filter:filter)
 		{
 			[weak self] in self?.folderSource?.removeContainer($0)
 		}

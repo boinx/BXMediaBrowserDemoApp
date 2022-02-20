@@ -96,7 +96,9 @@ class GenericLibrary : Library
 	
     func createContainer(for url:URL) -> FolderContainer
     {
-		FolderContainer(url:url)
+		let filter = self.folderSource?.filter as? FolderFilter ?? FolderFilter()
+		
+		return FolderContainer(url:url, filter:filter)
 		{
 			[weak self] in self?.folderSource?.removeContainer($0)
 		}
