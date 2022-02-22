@@ -20,8 +20,8 @@ class DropTargetViewController:NSViewController
 		if let dropView = self.textView
 		{
 			let url = URL(fileURLWithPath:"/Users/peter/Desktop")
-			FileDropDestination.registerDragTypes(for:dropView)
-			dropView.fileDropDestination = FileDropDestination(folderURL:url)
+			FolderDropDestination.registerDragTypes(for:dropView)
+			dropView.fileDropDestination = FolderDropDestination(folderURL:url)
 		}
 	}
 
@@ -30,7 +30,7 @@ class DropTargetViewController:NSViewController
 
 class DropTargetView :NSTextView
 {
-	public var fileDropDestination:FileDropDestination? = nil
+	public var fileDropDestination:FolderDropDestination? = nil
 
 	override func awakeFromNib()
 	{
