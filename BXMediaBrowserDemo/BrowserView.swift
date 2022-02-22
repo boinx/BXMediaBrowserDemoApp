@@ -110,7 +110,13 @@ struct BrowserView : View
 		return VStack(spacing:0)
 		{
 			viewFactory.objectsHeaderView(for:library, container:container)
+			
+			Color.primary.opacity(0.15).frame(height:1) // Divider line
+			
 			ObjectCollectionView(for:library, container:container, cellType:cellType)
+			
+			Color.primary.opacity(0.15).frame(height:1) // Divider line
+
 			viewFactory.objectsFooterView(for:library, container:container)
 		}
 		.frame(minWidth:240, maxWidth:.infinity)
