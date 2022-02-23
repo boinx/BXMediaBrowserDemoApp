@@ -19,8 +19,7 @@
 		D066B93327AFE405003BCD51 /* CustomViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0853A432779E34200987C23 /* CustomViewFactory.swift */; };
 		D066B93527AFE62A003BCD51 /* BXMediaBrowser in Frameworks */ = {isa = PBXBuildFile; productRef = D066B93427AFE62A003BCD51 /* BXMediaBrowser */; };
 		D066B95227B01F40003BCD51 /* DropTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066B95127B01F40003BCD51 /* DropTargetViewController.swift */; };
-		D089008427C62D3600A8E6DD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D089008327C62D3600A8E6DD /* LICENSE */; };
-		D089008627C64F4A00A8E6DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D089008527C64F4A00A8E6DD /* README.md */; };
+		D0B2C71227C6A00C00278209 /* BXSwiftUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D0B2C71127C6A00C00278209 /* BXSwiftUtils */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B2C71227C6A00C00278209 /* BXSwiftUtils in Frameworks */,
 				D066B93527AFE62A003BCD51 /* BXMediaBrowser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +122,7 @@
 			name = BXMediaBrowserDemo;
 			packageProductDependencies = (
 				D066B93427AFE62A003BCD51 /* BXMediaBrowser */,
+				D0B2C71127C6A00C00278209 /* BXSwiftUtils */,
 			);
 			productName = BXMediaBrowserDemo;
 			productReference = D066B91F27AFE134003BCD51 /* BXMediaBrowserDemo.app */;
@@ -154,6 +155,7 @@
 			packageReferences = (
 				D05F09E02774761D0037C3E4 /* XCRemoteSwiftPackageReference "BXMediaBrowser" */,
 				D09F1B1D27A5A23500097FA9 /* XCRemoteSwiftPackageReference "BXSwiftUI" */,
+				D0B2C71027C6A00C00278209 /* XCRemoteSwiftPackageReference "BXSwiftUtils" */,
 			);
 			productRefGroup = D0A1B846275B882300BEA8E8 /* Products */;
 			projectDirPath = "";
@@ -169,9 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D089008427C62D3600A8E6DD /* LICENSE in Resources */,
 				D066B92627AFE136003BCD51 /* Assets.xcassets in Resources */,
-				D089008627C64F4A00A8E6DD /* README.md in Resources */,
 				D066B92927AFE136003BCD51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +420,14 @@
 				kind = branch;
 			};
 		};
+		D0B2C71027C6A00C00278209 /* XCRemoteSwiftPackageReference "BXSwiftUtils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:boinx/BXSwiftUtils.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -427,6 +435,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D05F09E02774761D0037C3E4 /* XCRemoteSwiftPackageReference "BXMediaBrowser" */;
 			productName = BXMediaBrowser;
+		};
+		D0B2C71127C6A00C00278209 /* BXSwiftUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0B2C71027C6A00C00278209 /* XCRemoteSwiftPackageReference "BXSwiftUtils" */;
+			productName = BXSwiftUtils;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
