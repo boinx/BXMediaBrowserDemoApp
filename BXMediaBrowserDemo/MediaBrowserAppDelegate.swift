@@ -109,7 +109,7 @@ import BXSwiftUtils
 		
 		BXMediaBrowser.log.maxLevel = .debug 					// Root logger can disable all logging!
 		BXMediaBrowser.logDataModel.maxLevel = .warning
-		BXMediaBrowser.logDragAndDrop.maxLevel = .verbose
+		BXMediaBrowser.logDragAndDrop.maxLevel = .warning
 		BXMediaBrowser.FolderSource.log.maxLevel = .warning
 		BXMediaBrowser.MusicSource.log.maxLevel = .warning
 		BXMediaBrowser.PhotosSource.log.maxLevel = .warning
