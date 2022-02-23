@@ -11,6 +11,8 @@ With this package you can browse media files of several types (image, video, aud
 
 More is coming in the future.
 
+Click on the round + icon behind the "Folders" section in the sidebar to add top-level folders.
+
 To test browsing unsplash.com with the demo app, you need to get your own API access key and put it in your login keychain under “api_unsplash_com_accessKey”.
 
 If you are interested in using BXMediaBrowser or in contributing to its development, please get in touch. 
