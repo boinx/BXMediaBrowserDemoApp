@@ -1,6 +1,8 @@
 # BXMediaBrowserDemoApp
 
-This macOS demo application shows how to integrate the BXMediaBrowser Swift package into your own app. This this package you can browser media files of several types (Images, Video, Audio) from various sources. Since this is still a work in progress, not everything is implemented yet. The following sources are available at the moment:
+This macOS demo application shows how to integrate the BXMediaBrowser Swift package into your own app. BXMediaBrowser is a modern successor to the popular (but aging) iMediaBrowser framework. 
+
+With this package you can browse media files of several types (image, video, audio) from various sources. Since this is still a work in progress, not everything is implemented yet. The following sources are available at the moment:
 
 - Finder Folders
 - Unsplash.com
