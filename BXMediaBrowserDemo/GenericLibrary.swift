@@ -52,15 +52,15 @@ class GenericLibrary : Library
 	{
 		super.init(identifier:identifier)
 		
-		let librariesSection = Section(identifier:"Libraries", name:"Libraries")
+		let librariesSection = Section(identifier:"Libraries", name:Section.localizedNameLibraries)
 		self.librariesSection = librariesSection
 		self.addSection(librariesSection)
 		
-		let internetSection = Section(identifier:"Internet", name:"Internet")
+		let internetSection = Section(identifier:"Internet", name:Section.localizedNameInternet)
 		self.internetSection = internetSection
 		self.addSection(internetSection)
 		
-		let foldersSection = Section(identifier:"Folders", name:"Folders")
+		let foldersSection = Section(identifier:"Folders", name:Section.localizedNameFolders)
 		self.foldersSection = foldersSection
 		self.addSection(foldersSection)
 		

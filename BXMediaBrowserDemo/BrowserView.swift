@@ -73,9 +73,9 @@ struct BrowserView : View
 		{
 			Picker("", selection:$mediaType)
 			{
-				Text("Images").tag(0)
-				Text("Videos").tag(1)
-				Text("Audio").tag(2)
+				Text(Library.localizedNameImages).tag(0)
+				Text(Library.localizedNameVideos).tag(1)
+				Text(Library.localizedNameAudio).tag(2)
 			}
 			.pickerStyle(.segmented)
 			.padding(10)
