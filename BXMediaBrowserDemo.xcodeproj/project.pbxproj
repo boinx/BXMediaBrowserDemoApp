@@ -41,6 +41,9 @@
 		D089008327C62D3600A8E6DD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		D089008527C64F4A00A8E6DD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D0A1B851275B882500BEA8E8 /* BXMediaBrowserDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BXMediaBrowserDemo.entitlements; sourceTree = "<group>"; };
+		D0B2C71427C6BE0700278209 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		D0B2C71827C6BEB000278209 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		D0B2C71C27C6BEE300278209 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				fr,
 			);
 			mainGroup = D0A1B83C275B882300BEA8E8;
 			packageReferences = (
@@ -202,6 +207,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				D066B92827AFE136003BCD51 /* Base */,
+				D0B2C71427C6BE0700278209 /* en */,
+				D0B2C71827C6BEB000278209 /* de */,
+				D0B2C71C27C6BEE300278209 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
