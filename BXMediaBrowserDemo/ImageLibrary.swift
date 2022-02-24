@@ -71,7 +71,7 @@ class ImageLibrary : GenericLibrary
 		
 		return ImageFolderContainer(url:url, filter:filter)
 		{
-			[weak self] in self?.folderSource?.removeContainer($0)
+			[weak self] in self?.removeTopLevelFolder($0)
 		}
     }
 

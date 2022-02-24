@@ -100,7 +100,20 @@ class GenericLibrary : Library
 		
 		return FolderContainer(url:url, filter:filter)
 		{
-			[weak self] in self?.folderSource?.removeContainer($0)
+			[weak self] in self?.removeTopLevelFolder($0)
+		}
+    }
+    
+    func removeTopLevelFolder(_ container:Container)
+    {
+		let title = NSLocalizedString("Alert.title.removeFolder", bundle:.BXMediaBrowser, comment:"Alert Title")
+		let message = String(format:NSLocalizedString("Alert.message.removeFolder", bundle:.BXMediaBrowser, comment:"Alert Message"), container.name)
+		let ok = NSLocalizedString("Remove", bundle:.BXMediaBrowser, comment:"Button Title")
+		let cancel = NSLocalizedString("Cancel", bundle:.BXMediaBrowser, comment:"Button Title")
+		
+		NSAlert.presentModal(style:.critical, title:title, message:message, okButton:ok, cancelButton:cancel)
+		{
+			[weak self] in self?.folderSource?.removeContainer(container)
 		}
     }
 

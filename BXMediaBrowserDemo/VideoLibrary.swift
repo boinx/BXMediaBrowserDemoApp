@@ -62,7 +62,7 @@ class VideoLibrary : GenericLibrary
 		
 		return VideoFolderContainer(url:url, filter:filter)
 		{
-			[weak self] in self?.folderSource?.removeContainer($0)
+			[weak self] in self?.removeTopLevelFolder($0)
 		}
     }
 }
