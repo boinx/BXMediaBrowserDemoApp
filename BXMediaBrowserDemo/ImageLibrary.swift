@@ -55,6 +55,14 @@ class ImageLibrary : GenericLibrary
 			internetSection?.addSource(unsplashSource)
 		}
  
+ 		if let data = BXKeychain.data(forKey:"api_pexels_com_accessKey")
+		{
+			let key = String(decoding:data, as:UTF8.self)
+			Pexels.shared.accessKey = key
+			let pexelsSource = PexelsPhotoSource()
+			internetSection?.addSource(pexelsSource)
+		}
+ 
  		let folderSource = ImageFolderSource()
 		self.folderSource = folderSource
 		foldersSection?.addSource(folderSource)
