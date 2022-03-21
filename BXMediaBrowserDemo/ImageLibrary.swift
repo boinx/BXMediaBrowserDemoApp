@@ -46,7 +46,15 @@ class ImageLibrary : GenericLibrary
 
 		let photosSource = PhotosSource()
 		librariesSection?.addSource(photosSource)
-		
+ 
+		if let data = BXKeychain.data(forKey:"api_adobe_com_clientID")
+		{
+			let clientID = String(decoding:data, as:UTF8.self)
+			LightroomCC.shared.clientID = clientID
+			let lightroomCCSource = LightroomCCSource()
+			librariesSection?.addSource(lightroomCCSource)
+		}
+ 
 		if let data = BXKeychain.data(forKey:"api_unsplash_com_accessKey")
 		{
 			let key = String(decoding:data, as:UTF8.self)
