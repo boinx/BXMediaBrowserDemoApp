@@ -54,6 +54,20 @@ struct BrowserView : View
 		}
 	}
 	
+	private var selectedUIState:UIState
+	{
+		switch mediaType
+		{
+			case 1 : return videoUIState
+			case 2 : return audioUIState
+			default: return imageUIState
+		}
+	}
+
+	let imageUIState = UIState()
+	let videoUIState = UIState()
+	let audioUIState = UIState()
+	
 	// Build View
 	
     var body: some View
@@ -104,20 +118,21 @@ struct BrowserView : View
 	var objectBrowser: some View
     {
 		let library = self.selectedLibrary
+		let uiState = self.selectedUIState
 		let container = library.selectedContainer
-		let cellType = viewFactory.objectViewControllerType(for:container)
+		let cellType = viewFactory.objectViewControllerType(for:container, uiState:uiState)
 
 		return VStack(spacing:0)
 		{
-			viewFactory.objectsHeaderView(for:library, container:container)
+			viewFactory.objectsHeaderView(for:container, uiState:uiState)
 			
 			Color.primary.opacity(0.15).frame(height:1) // Divider line
 			
-			ObjectCollectionView(for:library, container:container, cellType:cellType)
+			ObjectCollectionView(container:container, cellType:cellType, uiState:uiState)
 			
 			Color.primary.opacity(0.15).frame(height:1) // Divider line
 
-			viewFactory.objectsFooterView(for:library, container:container)
+			viewFactory.objectsFooterView(for:container, uiState:uiState)
 		}
 		.frame(minWidth:240, maxWidth:.infinity)
     }

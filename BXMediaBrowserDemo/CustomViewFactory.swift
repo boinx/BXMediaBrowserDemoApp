@@ -41,19 +41,17 @@ final class CustomViewFactory : ViewFactory
 	
 	override public func containerView(for container:Container) -> AnyView
 	{
-		AnyView(Group
-		{
-//			if container is PhotosContainer
-//			{
-//				ContainerView(with:container).border(Color.red)
-//			}
-//			else
-//			{
-				ViewFactory.defaultContainerView(for:container)
-//			}
-		})
+		AnyView(
+			Self.defaultContainerView(for:container)
+		)
 	}
 
+	/// Returns the type of ObjectViewController subclass to be used for the specified Container
+	
+	override public func objectViewControllerType(for container:Container?, uiState:UIState) -> ObjectViewController.Type
+	{
+		super.objectViewControllerType(for:container, uiState:uiState)
+	}
 
 	// Provide custom context menu
 	
@@ -78,14 +76,6 @@ final class CustomViewFactory : ViewFactory
 				ViewFactory.defaultContainerContextMenu(for:container)
 			}
 		})
-	}
-
-
-	/// Returns the type of ObjectViewController subclass to be used for the specified Container
-	
-	override public func objectViewControllerType(for container:Container?) -> ObjectViewController.Type
-	{
-		super.objectViewControllerType(for:container)
 	}
 
 }
