@@ -31,15 +31,15 @@ import BXSwiftUtils
 //----------------------------------------------------------------------------------------------------------------------
 
 
-@main class MediaBrowserAppDelegate: NSObject, NSApplicationDelegate
+@main class MediaBrowserAppDelegate : NSObject, NSApplicationDelegate
 {
 	override init()
 	{
 		super.init()
 		
 		ProcessInfo.processInfo.disableSuddenTermination()
-		
 		Self.openLogFile()
+		self.installURLHandler()
 	}
 	
 	
@@ -83,6 +83,8 @@ import BXSwiftUtils
 //----------------------------------------------------------------------------------------------------------------------
 
 
+	// MARK: - Logging
+	
 	/// Returns the URL of the local log file
 	
 	static private var logFileURL: URL?
@@ -125,6 +127,35 @@ import BXSwiftUtils
 	{
 		BXLogger.closeLogFile()
 	}
+
+
+//----------------------------------------------------------------------------------------------------------------------
+
+
+	func installURLHandler()
+	{
+		NSAppleEventManager.shared().setEventHandler(
+			self,
+			andSelector: #selector(MediaBrowserAppDelegate.handleGetURL(event:withReplyEvent:)),
+			forEventClass: AEEventClass(kInternetEventClass),
+			andEventID: AEEventID(kAEGetURL))
+ 	}
+ 	
+ 	
+    @objc func handleGetURL(event:NSAppleEventDescriptor!, withReplyEvent:NSAppleEventDescriptor!)
+    {
+		let urlString = event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))?.stringValue ?? ""
+		guard let url = URL(string:urlString) else { return }
+
+		if BXMediaBrowser.LightroomCC.shared.isOAuthResponse(url)
+		{
+			BXMediaBrowser.LightroomCC.shared.handleOAuthResponse(url)
+		}
+		else
+		{
+			// handle other URLs
+		}
+   }
 }
 
 
