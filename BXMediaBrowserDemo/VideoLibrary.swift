@@ -23,8 +23,9 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 
-import AppKit
 import BXMediaBrowser
+import BXSwiftUtils
+import AppKit
 
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -43,9 +44,17 @@ class VideoLibrary : GenericLibrary
 	{
 		super.init(identifier:identifier)
 		
-		let photosSource = PhotosSource()
+		let photosSource = PhotosSource(allowedMediaTypes:[.video])
 		librariesSection?.addSource(photosSource)
 		
+ 		if let data = BXKeychain.data(forKey:"api_pexels_com_accessKey")
+		{
+			let key = String(decoding:data, as:UTF8.self)
+			Pexels.shared.accessKey = key
+			let pexelsSource = BXMediaBrowser.PexelsVideoSource()
+			internetSection?.addSource(pexelsSource)
+		}
+ 
 		let folderSource = VideoFolderSource()
 		self.folderSource = folderSource
 		foldersSection?.addSource(folderSource)

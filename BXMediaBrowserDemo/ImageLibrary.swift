@@ -23,9 +23,9 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 
-import AppKit
 import BXMediaBrowser
 import BXSwiftUtils
+import AppKit
 
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ class ImageLibrary : GenericLibrary
 	{
 		super.init(identifier:identifier)
 
-		let photosSource = PhotosSource()
+		let photosSource = PhotosSource(allowedMediaTypes:[.image])
 		librariesSection?.addSource(photosSource)
  
 		if let data = BXKeychain.data(forKey:"api_unsplash_com_accessKey")

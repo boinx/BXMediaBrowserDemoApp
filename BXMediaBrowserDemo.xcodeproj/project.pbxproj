@@ -29,7 +29,6 @@
 		D02F46B9277880AD00C959A4 /* VideoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibrary.swift; sourceTree = "<group>"; };
 		D02F46BB277880BA00C959A4 /* AudioLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioLibrary.swift; sourceTree = "<group>"; };
 		D02F46BD277881C100C959A4 /* GenericLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericLibrary.swift; sourceTree = "<group>"; };
-		D05F5F6627E8DFB1003735C6 /* BXMediaBrowser */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BXMediaBrowser; path = ../BXMediaBrowser; sourceTree = "<group>"; };
 		D066B91F27AFE134003BCD51 /* BXMediaBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BXMediaBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D066B92127AFE134003BCD51 /* MediaBrowserAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBrowserAppDelegate.swift; sourceTree = "<group>"; };
 		D066B92327AFE134003BCD51 /* MediaBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBrowserViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +103,6 @@
 		D0D7F0B827735F1C00F0CCF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D05F5F6627E8DFB1003735C6 /* BXMediaBrowser */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

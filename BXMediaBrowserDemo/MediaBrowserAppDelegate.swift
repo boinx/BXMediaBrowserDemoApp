@@ -114,7 +114,7 @@ import BXSwiftUtils
 		BXMediaBrowser.logDragAndDrop.maxLevel = .warning
 		BXMediaBrowser.FolderSource.log.maxLevel = .warning
 		BXMediaBrowser.MusicSource.log.maxLevel = .warning
-		BXMediaBrowser.PhotosSource.log.maxLevel = .warning
+		BXMediaBrowser.Photos.log.maxLevel = .warning
 		BXMediaBrowser.Unsplash.log.maxLevel = .warning
 		BXMediaBrowser.Pexels.log.maxLevel = .warning
 		BXMediaBrowser.LightroomCC.log.maxLevel = .warning
