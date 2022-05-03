@@ -6,15 +6,24 @@
 //
 
 import SwiftUI
+import BXMediaBrowser
 
-@main
-struct MediaBrowserApp : App
+
+@main struct MediaBrowserApp : App
 {
     var body: some Scene
     {
         WindowGroup
         {
-            ContentView()
+            BrowserView()
+            
+				.environmentObject(ImageLibrary.shared)
+				.environmentObject(VideoLibrary.shared)
+				.environmentObject(AudioLibrary.shared)
+				.environmentObject(StatisticsController.shared)
+				.environmentObject(AudioPreviewController.shared)
+				
+				.environment(\.viewFactory, CustomViewFactory())
         }
     }
 }
