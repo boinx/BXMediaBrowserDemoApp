@@ -23,8 +23,8 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 
-import AppKit
 import BXMediaBrowser
+import Foundation
 
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -43,9 +43,11 @@ class AudioLibrary : GenericLibrary
 	{
 		super.init(identifier:identifier)
 
+		#if os(macOS)
 		let musicSource = MusicSource()
 		librariesSection?.addSource(musicSource)
-	
+		#endif
+		
 		let folderSource = AudioFolderSource()
 		self.folderSource = folderSource
 		foldersSection?.addSource(folderSource)

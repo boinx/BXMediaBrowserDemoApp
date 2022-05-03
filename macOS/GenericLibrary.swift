@@ -24,7 +24,11 @@
 
 
 import BXMediaBrowser
+import Foundation
+
+#if os(macOS)
 import AppKit
+#endif
 
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -84,12 +88,20 @@ class GenericLibrary : Library
     {
 		guard let folderSource = folderSource else { return }
 		
+		#if os(macOS)
+		
 		NSOpenPanel.presentModal(canChooseFiles:false, canChooseDirectories:true, allowsMultipleSelection:false)
 		{
 			guard let url = $0.first else { return }
 			let container = self.createContainer(for:url)
 			folderSource.addContainer(container)
 		}
+		
+		#else
+		
+		#warning("TODO: implement for iOS")
+		
+		#endif
     }
     
     /// This function should be overridden in subclasses to create a specialized subclass of FolderContainer
@@ -111,10 +123,18 @@ class GenericLibrary : Library
 		let ok = NSLocalizedString("Remove", bundle:.BXMediaBrowser, comment:"Button Title")
 		let cancel = NSLocalizedString("Cancel", bundle:.BXMediaBrowser, comment:"Button Title")
 		
+		#if os(macOS)
+		
 		NSAlert.presentModal(style:.critical, title:title, message:message, okButton:ok, cancelButton:cancel)
 		{
 			[weak self] in self?.folderSource?.removeContainer(container)
 		}
+		
+		#else
+		
+		#warning("TODO: implement for iOS")
+		
+		#endif
     }
 
 

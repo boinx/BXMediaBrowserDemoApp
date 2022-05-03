@@ -48,9 +48,9 @@ final class CustomViewFactory : ViewFactory
 
 	/// Returns the type of ObjectViewController subclass to be used for the specified Container
 	
-	override public func objectViewControllerType(for container:Container?, uiState:UIState) -> ObjectViewController.Type
+	override public func objectCellType(for container:Container?, uiState:UIState) -> ObjectCell.Type
 	{
-		super.objectViewControllerType(for:container, uiState:uiState)
+		super.objectCellType(for:container, uiState:uiState)
 	}
 
 	// Provide custom context menu
@@ -63,12 +63,16 @@ final class CustomViewFactory : ViewFactory
 			{
 				Button("Beep")
 				{
+					#if os(macOS)
 					NSSound.beep()
+					#endif
 				}
 
 				Button("Bop")
 				{
+					#if os(macOS)
 					NSSound.beep()
+					#endif
 				}
 			}
 			else

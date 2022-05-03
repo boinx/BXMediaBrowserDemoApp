@@ -25,7 +25,7 @@
 
 import BXMediaBrowser
 import BXSwiftUtils
-import AppKit
+import Foundation
 
 
 //----------------------------------------------------------------------------------------------------------------------

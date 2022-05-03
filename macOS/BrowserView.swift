@@ -72,11 +72,23 @@ struct BrowserView : View
 	
     var body: some View
     {
+		#if os(macOS)
+		
 		HSplitView
 		{
 			self.sidebar
 			self.objectBrowser.layoutPriority(1)
 		}
+		
+		#else
+		
+		NavigationView
+		{
+			self.sidebar
+			self.objectBrowser //.layoutPriority(1)
+		}
+
+		#endif
     }
     
     // Sidebar View
@@ -120,7 +132,7 @@ struct BrowserView : View
 		let library = self.selectedLibrary
 		let uiState = self.selectedUIState
 		let container = library.selectedContainer
-		let cellType = viewFactory.objectViewControllerType(for:container, uiState:uiState)
+		let cellType = viewFactory.objectCellType(for:container, uiState:uiState)
 
 		return VStack(spacing:0)
 		{
@@ -128,7 +140,9 @@ struct BrowserView : View
 			
 			Color.primary.opacity(0.15).frame(height:1) // Divider line
 			
+			#if os(macOS)
 			ObjectCollectionView(container:container, cellType:cellType, uiState:uiState)
+			#endif
 			
 			Color.primary.opacity(0.15).frame(height:1) // Divider line
 
