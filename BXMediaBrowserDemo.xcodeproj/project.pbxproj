@@ -598,7 +598,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:boinx/BXMediaBrowser.git";
 			requirement = {
-				branch = "iOS-compatibilty";
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -606,7 +606,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:boinx/BXSwiftUI.git";
 			requirement = {
-				branch = "iOS-compatibility";
+				branch = master;
 				kind = branch;
 			};
 		};
