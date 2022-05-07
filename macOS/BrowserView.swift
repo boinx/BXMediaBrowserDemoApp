@@ -148,7 +148,7 @@ struct BrowserView : View
 
 			viewFactory.objectsFooterView(for:container, uiState:uiState)
 		}
-		.frame(minWidth:240, maxWidth:.infinity)
+		.frame(minWidth:340, maxWidth:.infinity)
     }
 
 }
