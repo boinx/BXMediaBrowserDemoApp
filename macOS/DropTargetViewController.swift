@@ -11,24 +11,24 @@ import BXMediaBrowser
 
 class DropTargetViewController:NSViewController
 {
-	@IBOutlet weak var textView:DropTargetView?
+	@IBOutlet weak var dropTargetView:DropTargetView?
 	
 	override func viewDidLoad()
 	{
 		super.viewDidLoad()
 		
-		if let dropView = self.textView
+		if let dropTargetView = self.dropTargetView
 		{
-			let url = URL(fileURLWithPath:"/Users/peter/Desktop")
-			FolderDropDestination.registerDragTypes(for:dropView)
-			dropView.fileDropDestination = FolderDropDestination(folderURL:url)
+			let url = URL(fileURLWithPath:NSHomeDirectory()).appendingPathComponent("Pictures")
+			FolderDropDestination.registerDragTypes(for:dropTargetView)
+			dropTargetView.fileDropDestination = FolderDropDestination(folderURL:url)
 		}
 	}
 
 }
 
 
-class DropTargetView :NSTextView
+class DropTargetView : NSTextView
 {
 	public var fileDropDestination:FolderDropDestination? = nil
 

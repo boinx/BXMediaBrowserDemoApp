@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -180,7 +180,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="MediaBrowserAppDelegate" customModule="BXMediaBrowserDemo" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="MediaBrowserAppDelegate" customModule="BXMediaBrowserDemoMac" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +210,7 @@
         <!--Media Browser View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="MediaBrowserViewController" customModule="BXMediaBrowserDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="MediaBrowserViewController" customModule="BXMediaBrowserDemoMac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1200" height="1016"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -248,7 +248,7 @@
         <!--Drop Target View Controller-->
         <scene sceneID="oc9-Tn-wQt">
             <objects>
-                <viewController id="mjM-6C-nFS" customClass="DropTargetViewController" customModule="BXMediaBrowserDemo" sceneMemberID="viewController">
+                <viewController id="mjM-6C-nFS" customClass="DropTargetViewController" customModule="BXMediaBrowserDemoMac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="rLp-lT-AI8">
                         <rect key="frame" x="0.0" y="0.0" width="1216" height="1016"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -260,7 +260,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="1216" height="1016"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" allowsImageEditing="YES" usesRuler="YES" smartInsertDelete="YES" id="waw-az-4lg" customClass="DropTargetView" customModule="BXMediaBrowserDemo" customModuleProvider="target">
+                                        <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" allowsImageEditing="YES" usesRuler="YES" smartInsertDelete="YES" id="waw-az-4lg" customClass="DropTargetView" customModule="BXMediaBrowserDemoMac" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="1216" height="1016"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -283,7 +283,7 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="waw-az-4lg" id="bE3-MV-RDe"/>
+                        <outlet property="dropTargetView" destination="waw-az-4lg" id="j2E-7Q-kXW"/>
                     </connections>
                 </viewController>
                 <customObject id="gD5-Ar-gmt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
